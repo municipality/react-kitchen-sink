@@ -1,0 +1,27 @@
+{
+  "name": "kitchen-sink",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "es6-promise": "^4.1.0",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "node-sass": "^4.5.2",
+    "nodemon": "^1.11.0",
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "build-scss & node ../with-redux/www & react-scripts start",
+    "debug": "concurrently \"npm run watch-scss\" \"react-scripts start\" \"node ../with-redux/www\"",
+    "watch-scss": "nodemon -e scss -x \"npm run build-scss\"",
+    "build-scss": "node-sass --include-path scss src/scss/all.scss src/app.css",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

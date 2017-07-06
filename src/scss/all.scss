@@ -1,0 +1,57 @@
+@import 'navbutton';
+@import 'slider';
+@import 'dropdownmenu';
+$title-color: rgba(240,40,40, 1);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.title {
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  font-family: monospace;
+  padding: 10px 0;
+  color: $title-color;
+}
+//Kitchen sink layout
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.route-container {
+  flex: 7;
+}
+
+.sidebar {
+  flex: 3;
+  max-width: 200px;
+  background-color: rgba(225,225,225, .3);
+  z-index: 1;
+  padding-right: 4px;
+  .sidebar-title {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  ul {
+    margin: 30px 20px;
+    padding: 0;
+
+  }
+
+  li {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+  }
+  //Box shadow on the right side
+  box-shadow: 4px 0 10px rgba(180, 180, 180, .8);
+  margin-right: 6px;
+}

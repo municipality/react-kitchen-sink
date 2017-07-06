@@ -1,0 +1,110 @@
+button:focus {
+  outline: 0;
+}
+
+.navbar-animation {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(200, 200, 200, .5);
+}
+
+.navbar-button-container {
+  width: 150px;
+}
+.navbar-animation-button {
+  position:relative;
+  left: 0;
+  font-size: 24px;
+  border: 0;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.navbar-animation-button.animation {
+  animation-name: 'text-sizer';
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: .5s;
+  -webkit-animation-name: 'text-sizer';
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: .5s;
+}
+
+.navbar-animation-button.clicked:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 90%;
+  width: 6px;
+  left: 0;
+  background-color: white;
+  animation-name: "text-blinker";
+  animation-iteration-count: 1;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation-name: "text-slider";
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+
+}
+.navbar-animation-button.clicked:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 90%;
+  width: 6px;
+  background-color: white;
+
+  visibility: hidden;
+  /*animation-name: "text-blinker";
+  animation-iteration-count: infinite;
+  animation-duration: 1s;*/
+  -webkit-animation-name: "text-blinker";
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  right: 0;
+  -webkit-animation-delay: .5s;
+}
+
+@keyframes text-sizer {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes text-slider {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(144px);
+    visibility: hidden;
+  }
+}
+
+@keyframes text-blinker {
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}

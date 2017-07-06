@@ -1,0 +1,298 @@
+button:focus {
+  outline: 0; }
+
+.navbar-animation {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(200, 200, 200, 0.5); }
+
+.navbar-button-container {
+  width: 150px; }
+
+.navbar-animation-button {
+  position: relative;
+  left: 0;
+  font-size: 24px;
+  border: 0;
+  background-color: transparent;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left; }
+
+.navbar-animation-button.animation {
+  animation-name: 'text-sizer';
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-duration: .5s;
+  -webkit-animation-name: 'text-sizer';
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: .5s; }
+
+.navbar-animation-button.clicked:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 90%;
+  width: 6px;
+  left: 0;
+  background-color: white;
+  animation-name: "text-blinker";
+  animation-iteration-count: 1;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  -webkit-animation-name: "text-slider";
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards; }
+
+.navbar-animation-button.clicked:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 90%;
+  width: 6px;
+  background-color: white;
+  visibility: hidden;
+  /*animation-name: "text-blinker";
+  animation-iteration-count: infinite;
+  animation-duration: 1s;*/
+  -webkit-animation-name: "text-blinker";
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  right: 0;
+  -webkit-animation-delay: .5s; }
+
+@keyframes text-sizer {
+  0% {
+    width: 0; }
+  100% {
+    width: 100%; } }
+
+@keyframes text-slider {
+  0% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(144px);
+    visibility: hidden; } }
+
+@keyframes text-blinker {
+  50% {
+    visibility: hidden; }
+  100% {
+    visibility: visible; } }
+
+.slider {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden; }
+
+.slider-inner {
+  display: flex;
+  flex-direction: row;
+  height: 100%; }
+
+.slider-image {
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 50%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  transform: translateX(0%); }
+
+.slider-image.leftoff {
+  animation-name: 'leftoff'; }
+  .slider-image.leftoff.reverse {
+    animation-name: 'leftoff-reverse'; }
+
+.slider-image.left {
+  animation-name: 'left'; }
+  .slider-image.left.reverse {
+    animation-name: 'left-reverse'; }
+
+.slider-image.center {
+  animation-name: 'center'; }
+  .slider-image.center.reverse {
+    animation-name: 'center-reverse'; }
+
+.slider-image.right {
+  animation-name: 'right'; }
+  .slider-image.right.reverse {
+    animation-name: 'right-reverse'; }
+
+.slider-image.rightoff {
+  animation-name: 'rightoff'; }
+  .slider-image.rightoff.reverse {
+    animation-name: 'rightoff-reverse'; }
+
+@keyframes leftoff {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(-200%); } }
+
+@keyframes left {
+  0% {
+    transform: translateX(0%); }
+  100% {
+    transform: translateX(-100%); } }
+
+@keyframes right {
+  0% {
+    transform: translateX(200%); }
+  100% {
+    transform: translateX(100%); } }
+
+@keyframes rightoff {
+  0% {
+    transform: translateX(300%); }
+  100% {
+    transform: translateX(200%); } }
+
+@keyframes center {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(0%); } }
+
+@keyframes leftoff-reverse {
+  100% {
+    transform: translateX(-100%); }
+  0% {
+    transform: translateX(-200%); } }
+
+@keyframes left-reverse {
+  100% {
+    transform: translateX(0%); }
+  0% {
+    transform: translateX(-100%); } }
+
+@keyframes right-reverse {
+  100% {
+    transform: translateX(200%); }
+  0% {
+    transform: translateX(100%); } }
+
+@keyframes rightoff-reverse {
+  100% {
+    transform: translateX(300%); }
+  0% {
+    transform: translateX(200%); } }
+
+@keyframes center-reverse {
+  100% {
+    transform: translateX(100%); }
+  0% {
+    transform: translateX(0%); } }
+
+.arrow {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background-color: white;
+  z-index: 1;
+  opacity: .3; }
+
+.arrow:hover {
+  opacity: .8; }
+
+.left-arrow {
+  left: 0; }
+
+.right-arrow {
+  right: 0; }
+
+.dropdownmenu-container {
+  width: 200px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center; }
+
+.dropdownmenu {
+  max-height: 0;
+  overflow-y: hidden;
+  transition: max-height 0.3s; }
+
+.dropdownmenu-item {
+  color: rgba(120, 120, 120, 0.7);
+  font-size: 24px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid rgba(200, 200, 200, 0.5);
+  background-color: white; }
+  .dropdownmenu-item:hover, .dropdownmenu-item.chosen {
+    color: black; }
+  .dropdownmenu-item.dropdownmenu-item-selected {
+    background-color: yellow; }
+
+@keyframes dropdownmenu-item-animation {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: 0; } }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; }
+
+.title {
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  font-family: monospace;
+  padding: 10px 0;
+  color: #f02828; }
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  position: absolute; }
+
+.route-container {
+  flex: 7; }
+
+.sidebar {
+  flex: 3;
+  max-width: 200px;
+  background-color: rgba(225, 225, 225, 0.3);
+  z-index: 1;
+  padding-right: 4px;
+  box-shadow: 4px 0 10px rgba(180, 180, 180, 0.8);
+  margin-right: 6px; }
+  .sidebar .sidebar-title {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 20px; }
+  .sidebar ul {
+    margin: 30px 20px;
+    padding: 0; }
+  .sidebar li {
+    display: block;
+    text-align: center;
+    font-size: 16px; }
