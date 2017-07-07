@@ -23,14 +23,13 @@ class Slider extends Component {
     //Fetch images when component is mounted
     let header = new Headers({
             'Access-Control-Allow-Origin':'*',
-            'Content-Type': 'multipart/form-data'
     });
 
     let options = {
       mode: 'cors',
       header: header
     };
-    fetch('http://localhost:8000/api/getphotopanels', options)
+    fetch(document.origin + '/api/getphotopanels', options)
       .then(response => response.json())
       .then(json => {
         this.setState({
