@@ -30,7 +30,20 @@ class Slider extends Component {
       header: header
     };
     fetch(document.origin + '/api/getphotopanels', options)
-      .then(response => response.json())
+      .then(response => {
+        if (response.status >= 400) {
+          console.log('Bad response from getphotopanels');
+          var ret = [];
+          for(var i = 0; i < 5; i++) {
+            ret.push({
+              id: i,
+              src: './city.jpg'
+            });
+          }
+          return ret;
+        }
+        return response.json();
+      })
       .then(json => {
         this.setState({
           loaded: true,
