@@ -5,6 +5,17 @@
 $sidebar-width: 200px;
 $title-color: rgba(240,40,40, 1);
 $sidebar-shadow-width: 10px;
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./scss/fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Ostrich';
+  src: url('./scss/fonts/ostrich-regular.ttf')
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -14,7 +25,7 @@ body {
   font-size: 24px;
   width: 100%;
   text-align: center;
-  font-family: monospace;
+  font-family: 'Open Sans', sans-serif;;
   padding: 10px 0;
   color: $title-color;
 }
