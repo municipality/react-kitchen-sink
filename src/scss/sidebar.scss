@@ -1,0 +1,69 @@
+$sidebar-width: 200px;
+$sidebar-shadow-width: 10px;
+$sidebar-title-animation-duration: .25s;
+$sidebar-title-animation-color: rgba(247, 197, 180, .9);
+
+.sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+  background-color: rgba(225,225,225, .3);
+  z-index: 1;
+  padding-right: 4px;
+  position: fixed;
+
+  .sidebar-title {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .sidebar-title-animation {
+    z-index: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50);
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    border-bottom: 3px solid $sidebar-title-animation-color;
+    transition: all $sidebar-title-animation-duration;
+    &.hovering {
+      width: 100%;
+      left: 0%;
+    }
+  }
+
+  ul {
+    margin: 30px 20px;
+    padding: 0;
+
+  }
+
+  li {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  a:-webkit-any-link {
+    text-decoration: none;
+    color: black;
+    position: relative;
+
+    //Set z-index above animation
+    z-index: 1;
+    //Handle hover and selected
+    opacity: .5;
+    &:hover, &.selected {
+      opacity: 1;
+    }
+
+
+  }
+  //Box shadow on the right side
+  box-shadow: 4px 0 $sidebar-shadow-width rgba(180, 180, 180, .8);
+
+  margin-right: 6px;
+}

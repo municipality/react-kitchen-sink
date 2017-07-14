@@ -1,3 +1,55 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url("./scss/fonts/OpenSans-Light.ttf"); }
+
+@font-face {
+  font-family: 'Ostrich';
+  src: url("./scss/fonts/ostrich-regular.ttf"); }
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: rgba(225, 225, 225, 0.3);
+  z-index: 1;
+  padding-right: 4px;
+  position: fixed;
+  box-shadow: 4px 0 10px rgba(180, 180, 180, 0.8);
+  margin-right: 6px; }
+  .sidebar .sidebar-title {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 20px; }
+  .sidebar .sidebar-title-animation {
+    z-index: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50);
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    border-bottom: 3px solid rgba(247, 197, 180, 0.9);
+    transition: all 0.25s; }
+    .sidebar .sidebar-title-animation.hovering {
+      width: 100%;
+      left: 0%; }
+  .sidebar ul {
+    margin: 30px 20px;
+    padding: 0; }
+  .sidebar li {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 5px; }
+  .sidebar a:-webkit-any-link {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    z-index: 1;
+    opacity: .5; }
+    .sidebar a:-webkit-any-link:hover, .sidebar a:-webkit-any-link.selected {
+      opacity: 1; }
+
 button:focus {
   outline: 0; }
 
@@ -307,14 +359,6 @@ button:focus {
     opacity: 1;
     transform: translateY(-50%); } }
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url("./scss/fonts/OpenSans-Light.ttf"); }
-
-@font-face {
-  font-family: 'Ostrich';
-  src: url("./scss/fonts/ostrich-regular.ttf"); }
-
 body {
   margin: 0;
   padding: 0;
@@ -339,31 +383,3 @@ body {
   position: relative;
   padding-left: 210px;
   width: 100%; }
-
-.sidebar {
-  width: 200px;
-  height: 100vh;
-  background-color: rgba(225, 225, 225, 0.3);
-  z-index: 1;
-  padding-right: 4px;
-  position: fixed;
-  box-shadow: 4px 0 10px rgba(180, 180, 180, 0.8);
-  margin-right: 6px; }
-  .sidebar a:-webkit-any-link {
-    text-decoration: none;
-    color: black;
-    opacity: .5; }
-    .sidebar a:-webkit-any-link:hover {
-      opacity: 1; }
-  .sidebar .sidebar-title {
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 20px; }
-  .sidebar ul {
-    margin: 30px 20px;
-    padding: 0; }
-  .sidebar li {
-    display: block;
-    text-align: center;
-    font-size: 16px;
-    padding-bottom: 3px; }

@@ -1,20 +1,16 @@
+$title-color: rgba(240,40,40, 1);
+
+//fonts
+@import './fonts/fonts';
+
+//Components
+@import 'sidebar';
 @import 'navbutton';
 @import 'slider';
 @import 'dropdownmenu';
 @import 'landingcover';
-$sidebar-width: 200px;
-$title-color: rgba(240,40,40, 1);
-$sidebar-shadow-width: 10px;
+@import 'photobutton';
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url('./scss/fonts/OpenSans-Light.ttf');
-}
-
-@font-face {
-  font-family: 'Ostrich';
-  src: url('./scss/fonts/ostrich-regular.ttf')
-}
 
 body {
   margin: 0;
@@ -42,43 +38,4 @@ body {
   position: relative;
   padding-left: $sidebar-width + $sidebar-shadow-width;
   width: 100%;
-}
-
-.sidebar {
-  width: $sidebar-width;
-  height: 100vh;
-  background-color: rgba(225,225,225, .3);
-  z-index: 1;
-  padding-right: 4px;
-  position: fixed;
-  a:-webkit-any-link {
-    text-decoration: none;
-    color: black;
-    opacity: .5;
-    &:hover {
-      opacity: 1;
-    }
-  }
-  .sidebar-title {
-    font-size: 20px;
-    text-align: center;
-    padding-bottom: 20px;
-  }
-
-  ul {
-    margin: 30px 20px;
-    padding: 0;
-
-  }
-
-  li {
-    display: block;
-    text-align: center;
-    font-size: 16px;
-    padding-bottom: 3px;
-  }
-  //Box shadow on the right side
-  box-shadow: 4px 0 $sidebar-shadow-width rgba(180, 180, 180, .8);
-
-  margin-right: 6px;
 }
