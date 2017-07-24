@@ -1,0 +1,30 @@
+$photo-button-blur: 5px;
+$photo-button-transition-duration: .2s;
+$photo-button-text-font-size: 24px;
+
+.photo-button {
+  position: relative;
+  cursor: pointer;
+}
+
+.photo-button-image {
+  position: relative;
+  filter: blur(0);
+  transition: filter $photo-button-transition-duration;
+  &.hover {
+    filter: blur($photo-button-blur);
+    z-index: 0;
+  }
+
+}
+
+.photo-button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  color: white;
+  letter-spacing: 1px;
+  font-size: $photo-button-text-font-size;
+}

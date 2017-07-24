@@ -20,7 +20,7 @@
 
     "start": "node ./www",
     "postinstall": "npm run build-scss && npm run build",
-    "debug": "concurrently \"npm run watch-scss\" \"react-scripts start\" \"node www\"",
+    "debug": "npm run build && concurrently \"npm run watch-scss\" \"react-scripts start\" \"node ./www\"",
     "watch-scss": "nodemon -e scss -x \"npm run build-scss\"",
     "build-scss": "node-sass --include-path scss src/scss/all.scss src/app.css",
     "build": "react-scripts build",
